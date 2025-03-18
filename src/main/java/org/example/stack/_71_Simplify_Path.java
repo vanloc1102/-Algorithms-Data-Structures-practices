@@ -1,12 +1,29 @@
 package org.example.stack;
 
+import java.util.Stack;
+
 public class _71_Simplify_Path {
     public static String simplifyPath(String path) {
+        Stack<String> stack = new Stack<>();
+        String[] parts = path.split("/");
 
-        return null;
+        for (String part : parts) {
+            if (part.equals("") || part.equals(".")) {
+                continue;
+            }
+            if (part.equals("..")) {
+                if (!stack.isEmpty()) {
+                    stack.pop();
+                }
+            } else {
+                stack.push(part);
+            }
+        }
+        return "/" + String.join("/", stack);
     }
     public static void main(String[] args) {
-
+        String simplifyPath = simplifyPath("/home/");
+        System.out.println(simplifyPath);
     }
 
 //    Example 1:
@@ -21,7 +38,7 @@ public class _71_Simplify_Path {
 //    Explanation:
 //    Multiple consecutive slashes are replaced by a single one.
 //
-//            Example 3:
+//    Example 3:
 //    Input: path = "/home/user/Documents/../Pictures"
 //    Output: "/home/user/Pictures"
 //    Explanation:
