@@ -1,12 +1,17 @@
 package org.example;
 
+import java.util.ArrayDeque;
+import java.util.LinkedList;
+import java.util.Queue;
+
 public class Main {
-    public static int changeNumber(Integer number) {
-        return number + 2;
-    }
     public static void main(String[] args) {
-        Integer number = 205;
-        number =  changeNumber(number);
-        System.out.println("Hello, World! " + number);
+        StringBuilder sb = new StringBuilder (5);
+        sb.append("HOWDY");
+        sb.insert(0, ' ');
+        sb.replace (3, 5, "LL");
+        sb.insert (5, "Cow");
+        sb.delete (2, 7);
+        System.out.println(sb.length());
     }
 }
