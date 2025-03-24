@@ -13,5 +13,8 @@ public class Main {
         sb.insert (5, "Cow");
         sb.delete (2, 7);
         System.out.println(sb.length());
+
+        Integer a = null;
+        System.out.println(a <= 0);
     }
 }
